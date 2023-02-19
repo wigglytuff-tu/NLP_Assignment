@@ -1,8 +1,8 @@
 from util import *
 
 # Add your import statements here
-
-
+import re
+from nltk.tokenize import sent_tokenize
 
 
 class SentenceSegmentation():
@@ -25,6 +25,7 @@ class SentenceSegmentation():
 		segmentedText = None
 
 		#Fill in code here
+		segmentedText = [x.strip() for x in re.split('[?.!]', text) if len(x) >= 1]
 
 		return segmentedText
 
@@ -49,6 +50,6 @@ class SentenceSegmentation():
 
 		segmentedText = None
 
-		#Fill in code here
+		segmentedText = sent_tokenize(text)
 		
 		return segmentedText
